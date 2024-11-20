@@ -1,0 +1,21 @@
+<!-- app/views/payments/new.html.erb -->
+<h1>Создание платежа</h1>
+
+<%= form_with url: payments_path, method: :post do |f| %>
+  <%= f.label :amount, "Amount" %>
+  <%= f.number_field :amount %>
+
+  <%= f.label :currency, "Currency" %>
+  <%= f.select :currency, ['EUR', 'GBP'], prompt: '', required: true %>
+
+  <%= f.label :country, "Country" %>
+  <%= f.text_field :country %>
+
+  <%= f.label :email, "Email" %>
+  <%= f.email_field :email %>
+
+  <%= f.label :phone, "Phone" %>
+  <%= f.telephone_field :phone %>
+
+  <%= f.submit "Start Payment" %>
+<% end %>
